@@ -8,7 +8,17 @@
 </head>
 <body>
     <h1>
-    PIA 👍
+    PIA DESARROLLO DE SOFTWARE II
     </h1>
+    <h2>
+    Bienvenido a la pagina para ver videos del equipo DS
+
+    </h2>
+    <a href="/BASE/Curso_Tema">Ver curso Tema</a>
+    <a href="/BASE/Tema">Ver tema</a>
+    <a href="/BASE/Video">Ver Videos</a>
+    <a href="/BASE/Curso_Video_Tema">Videos Tema</a>
+    <a href="/BASE/Curso">Ver Cursos</a>
+    <a href="/BASE/Empleado">Ver Empleados</a>
 </body>
 </html>
