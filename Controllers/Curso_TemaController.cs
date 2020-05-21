@@ -4,6 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+using System.Data.SqlClient;
+using System.Data;
+using MVCLaboratorio.Utilerias;
+using MVCLaboratorio.Models;
+
 namespace MVCLaboratorio.Controllers
 {
     public class Curso_TemaController : Controller
@@ -11,9 +16,11 @@ namespace MVCLaboratorio.Controllers
         //
         // GET: /Curso_Tema/
 
+        RepositorioCurso_Tema repoCurso_Video = new RepositorioCurso_Tema();
+
         public ActionResult Index()
         {
-            return View();
+            return View(repoCurso_Video.ObtenerCurso_Temas());
         }
 
         //

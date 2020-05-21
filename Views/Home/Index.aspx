@@ -14,11 +14,16 @@
     Bienvenido a la pagina para ver videos del equipo DS
 
     </h2>
-    <a href="/BASE/Curso_Tema">Ver curso Tema</a>
+    <a href="/Curso_Tema/Index">Ver Curso Tema</a>
+    <br />
     <a href="/BASE/Tema">Ver tema</a>
+    <br />
     <a href="/BASE/Video">Ver Videos</a>
+    <br />
     <a href="/BASE/Curso_Video_Tema">Videos Tema</a>
+    <br />
     <a href="/BASE/Curso">Ver Cursos</a>
+    <br />
     <a href="/BASE/Empleado">Ver Empleados</a>
 </body>
 </html>
