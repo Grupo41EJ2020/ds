@@ -67,7 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\Curso_TemaController.cs" />
-    <Compile Include="Controllers\Curso_Video_TemaController.cs" />
+    <Compile Include="Controllers\Curso_Tema_VideoController.cs" />
     <Compile Include="Controllers\EmpleadoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TemaController.cs" />
@@ -76,7 +76,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Curso_Tema.cs" />
+    <Compile Include="Models\Curso_Tema_Video.cs" />
     <Compile Include="Models\RepositorioCurso_Tema.cs" />
+    <Compile Include="Models\Video.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilerias\BaseHelper.cs" />
   </ItemGroup>

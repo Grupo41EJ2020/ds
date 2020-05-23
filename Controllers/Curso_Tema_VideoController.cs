@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace MVCLaboratorio.Controllers
 {
-    public class Curso_Video_TemaController : Controller
+    public class Curso_Tema_VideoController : Controller
     {
         //
-        // GET: /Curso_Video_Tema/
+        // GET: /Curso_Tema_Video/
 
         public ActionResult Index()
         {
@@ -17,7 +17,7 @@ namespace MVCLaboratorio.Controllers
         }
 
         //
-        // GET: /Curso_Video_Tema/Details/5
+        // GET: /Curso_Tema_Video/Details/5
 
         public ActionResult Details(int id)
         {
@@ -25,7 +25,7 @@ namespace MVCLaboratorio.Controllers
         }
 
         //
-        // GET: /Curso_Video_Tema/Create
+        // GET: /Curso_Tema_Video/Create
 
         public ActionResult Create()
         {
@@ -33,7 +33,7 @@ namespace MVCLaboratorio.Controllers
         } 
 
         //
-        // POST: /Curso_Video_Tema/Create
+        // POST: /Curso_Tema_Video/Create
 
         [HttpPost]
         public ActionResult Create(FormCollection collection)
@@ -51,7 +51,7 @@ namespace MVCLaboratorio.Controllers
         }
         
         //
-        // GET: /Curso_Video_Tema/Edit/5
+        // GET: /Curso_Tema_Video/Edit/5
  
         public ActionResult Edit(int id)
         {
@@ -59,7 +59,7 @@ namespace MVCLaboratorio.Controllers
         }
 
         //
-        // POST: /Curso_Video_Tema/Edit/5
+        // POST: /Curso_Tema_Video/Edit/5
 
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
@@ -77,7 +77,7 @@ namespace MVCLaboratorio.Controllers
         }
 
         //
-        // GET: /Curso_Video_Tema/Delete/5
+        // GET: /Curso_Tema_Video/Delete/5
  
         public ActionResult Delete(int id)
         {
@@ -85,7 +85,7 @@ namespace MVCLaboratorio.Controllers
         }
 
         //
-        // POST: /Curso_Video_Tema/Delete/5
+        // POST: /Curso_Tema_Video/Delete/5
 
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)

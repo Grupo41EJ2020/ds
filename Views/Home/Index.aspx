@@ -20,7 +20,7 @@
     <br />
     <a href="/Video/Index">Ver Videos</a>
     <br />
-    <a href="/Curso_Video_Tema/Index">Videos Tema</a>
+    <a href="/Curso_Tema_Video/Index">Videos Tema</a>
     <br />
     <a href="/Curso/Index">Ver Cursos</a>
     <br />
