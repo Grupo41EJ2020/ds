@@ -66,7 +66,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\CursoController.cs" />
     <Compile Include="Controllers\Curso_TemaController.cs" />
     <Compile Include="Controllers\Curso_Video_TemaController.cs" />
     <Compile Include="Controllers\EmpleadoController.cs" />
@@ -86,6 +85,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Views\Curso_Tema\Index.aspx" />
     <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Video\Create.aspx" />
+    <Content Include="Views\Video\Index.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
