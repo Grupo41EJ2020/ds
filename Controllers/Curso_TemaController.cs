@@ -16,11 +16,11 @@ namespace MVCLaboratorio.Controllers
         //
         // GET: /Curso_Tema/
 
-        RepositorioCurso_Tema repoCurso_Video = new RepositorioCurso_Tema();
+        RepositorioCurso_Tema repoCurso_Tema = new RepositorioCurso_Tema();
 
         public ActionResult Index()
         {
-            return View(repoCurso_Video.ObtenerCurso_Temas());
+            return View(repoCurso_Tema.ObtenerCurso_Temas());
         }
 
         //
@@ -86,27 +86,19 @@ namespace MVCLaboratorio.Controllers
         //
         // GET: /Curso_Tema/Delete/5
  
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int IdCT)
         {
-            return View();
+            return View(repoCurso_Tema.obtenerCurso_Tema(IdCT));
         }
 
         //
         // POST: /Curso_Tema/Delete/5
 
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int IdCT, FormCollection collection)
         {
-            try
-            {
-                // TODO: Add delete logic here
- 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            repoCurso_Tema.eliminarCurso_Tema(IdCT);
+            return RedirectToAction("Index");
         }
     }
 }

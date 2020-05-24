@@ -15,7 +15,7 @@ namespace MVCLaboratorio.Models
         public List<Curso_Tema> ObtenerCurso_Temas()
         {
             //obtener todos los videos
-            DataTable dtCurso_Tema = BaseHelper.ejecutarConsulta("sp_Curso_Video_ConsultarTodo", CommandType.StoredProcedure);
+            DataTable dtCurso_Tema = BaseHelper.ejecutarConsulta("sp_Curso_Tema_ConsultarTodo", CommandType.StoredProcedure);
 
             List<Curso_Tema> lstCurso_Tema = new List<Curso_Tema>();
 
@@ -25,8 +25,8 @@ namespace MVCLaboratorio.Models
             {
                 Curso_Tema datosCurso_Tema = new Curso_Tema();
 
-                datosCurso_Tema.idCT = int.Parse(item["idCT"].ToString());
-                datosCurso_Tema.idCurso = int.Parse(item["idCurso"].ToString());
+                datosCurso_Tema.IdCT = int.Parse(item["idCT"].ToString());
+                datosCurso_Tema.IdCurso = int.Parse(item["idCurso"].ToString());
 
                 lstCurso_Tema.Add(datosCurso_Tema);
 
@@ -34,43 +34,42 @@ namespace MVCLaboratorio.Models
             return lstCurso_Tema;
         }
 
-        //public Video obtenerVideo(int idVideo)
-        //{
-        //    //consultar los datos del video
-        //    List<SqlParameter> parametros = new List<SqlParameter>();
-        //    parametros.Add(new SqlParameter("@IdVideo", idVideo));
+        public Curso_Tema obtenerCurso_Tema(int IdCT)
+        {
+            //consultar los datos del video
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@IdCT", IdCT));
 
-        //    DataTable dtVideo = BaseHelper.ejecutarConsulta("sp_Video_ConsultarPorID", CommandType.StoredProcedure, parametros);
+            DataTable dtCurso_Tema = BaseHelper.ejecutarConsulta("sp_Curso_Tema_ConsultarPorID", CommandType.StoredProcedure, parametros);
 
-        //    Video miVideo = new Video();
+            Curso_Tema miCurso_Tema = new Curso_Tema();
 
-        //    if (dtVideo.Rows.Count > 0)
-        //    {
-        //        miVideo.IdVideo = int.Parse(dtVideo.Rows[0]["IdVideo"].ToString());
-        //        miVideo.Nombre = dtVideo.Rows[0]["Nombre"].ToString();
-        //        miVideo.Url = dtVideo.Rows[0]["Url"].ToString();
-        //        miVideo.FechaPublicacion = DateTime.Parse(dtVideo.Rows[0]["FechaPublicacion"].ToString());
-        //        return miVideo;
-        //    }
-        //    else
-        //    {  //no encontrado 
-        //        return null;
-        //    }
-        //}
+            if (dtCurso_Tema.Rows.Count > 0)
+            {
+                miCurso_Tema.IdCT = int.Parse(dtCurso_Tema.Rows[0]["IdCT"].ToString());
+                miCurso_Tema.IdCurso = int.Parse(dtCurso_Tema.Rows[0]["IdCurso"].ToString());
+                miCurso_Tema.IdTema = int.Parse(dtCurso_Tema.Rows[0]["IdTema"].ToString());                
+                return miCurso_Tema;
+            }
+            else
+            {  //no encontrado 
+                return null;
+            }
+        }
 
         //public void insertarVideo(Video datosVideo)
         //{
         //    throw new NotImplementedException();
         //}
 
-        //public void eliminarVideo(int idVideo)
-        //{
-        //    //obtener info del video
-        //    List<SqlParameter> parametros = new List<SqlParameter>();
-        //    parametros.Add(new SqlParameter("@IdVideo", idVideo));
+        public void eliminarCurso_Tema(int IdCT)
+        {
+            //obtener info del video
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@IdCT", IdCT));
 
-        //    BaseHelper.ejecutarConsulta("sp_Video_Eliminar", CommandType.StoredProcedure, parametros);
-        //}
+            BaseHelper.ejecutarConsulta("sp_Curso_Tema_Eliminar", CommandType.StoredProcedure, parametros);
+        }
 
         //public void actualizarVideo(Video datosVideo)
         //{
