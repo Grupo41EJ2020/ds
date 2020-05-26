@@ -82,6 +82,7 @@
     <Compile Include="Models\Curso_Tema_Video.cs" />
     <Compile Include="Models\RepositorioCurso.cs" />
     <Compile Include="Models\RepositorioCurso_Tema.cs" />
+    <Compile Include="Models\Tema.cs" />
     <Compile Include="Models\Video.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilerias\BaseHelper.cs" />
@@ -91,6 +92,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Views\Curso_Tema\Index.aspx" />
     <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Tema\Index.aspx" />
     <Content Include="Views\Video\Create.aspx" />
     <Content Include="Views\Video\Index.aspx" />
     <Content Include="Web.config">
