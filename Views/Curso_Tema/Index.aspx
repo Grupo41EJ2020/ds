@@ -11,13 +11,7 @@
         <tr>
             <th></th>
             <th>
-                idCT
-            </th>
-            <th>
-                idCurso
-            </th>
-            <th>
-                idTema
+                IdCT
             </th>
         </tr>
 
@@ -25,17 +19,12 @@
     
         <tr>
             <td>
-                <%: Html.ActionLink("Editar", "Edit", new {  id=item.idCT }) %> |
-                <%: Html.ActionLink("Eliminar", "Delete", new {  id=item.idCT  })%>
+                <%: Html.ActionLink("Editar", "Edit", new {  IdCT=item.IdCT }) %> |
+                <%: Html.ActionLink("Detalles", "Details", new {  IdCT=item.IdCT })%> |
+                <%: Html.ActionLink("Eliminar", "Delete", new {  IdCT=item.IdCT  })%>
             </td>
             <td>
-                <%: item.idCT %>
-            </td>
-            <td>
-                <%: item.idCurso %>
-            </td>
-            <td>
-                <%: item.idTema %>
+                <%: item.IdCT %>
             </td>
         </tr>
     

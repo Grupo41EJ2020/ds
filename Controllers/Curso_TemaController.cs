@@ -26,9 +26,9 @@ namespace MVCLaboratorio.Controllers
         //
         // GET: /Curso_Tema/Details/5
 
-        public ActionResult Details(int id)
+        public ActionResult Details(int IdCT)
         {
-            return View();
+            return View(repoCurso_Tema.obtenerCurso_Tema(IdCT));
         }
 
         //
