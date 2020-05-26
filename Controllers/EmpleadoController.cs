@@ -4,6 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+using System.Data;
+using System.Data.SqlClient;
+using MVCLaboratorio.Utilerias;
+using MVCLaboratorio.Models;
+
 namespace MVCLaboratorio.Controllers
 {
     public class EmpleadoController : Controller
@@ -13,7 +18,26 @@ namespace MVCLaboratorio.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            //obtener todos los videos
+            DataTable dtEmpleado = BaseHelper.ejecutarConsulta("sp_empleado_consultar", CommandType.StoredProcedure);
+
+            List<Empleado> lstEmpleado = new List<Empleado>();
+
+            //convertir el DataTable en List<Video> 
+
+            foreach (DataRow item in dtEmpleado.Rows)
+            {
+                Empleado datosEmpleado = new Empleado();
+                datosEmpleado.idEmpleado = int.Parse(item["idVideo"].ToString());
+                datosEmpleado.nombre = item["nombre"].ToString();
+                datosEmpleado.direccion = item["direccion"].ToString();
+               
+                lstEmpleado.Add(datosEmpleado);
+
+            }
+
+            return View(lstEmpleado);
+
         }
 
         //
@@ -21,6 +45,7 @@ namespace MVCLaboratorio.Controllers
 
         public ActionResult Details(int id)
         {
+            
             return View();
         }
 
