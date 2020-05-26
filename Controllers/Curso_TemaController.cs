@@ -34,53 +34,46 @@ namespace MVCLaboratorio.Controllers
         //
         // GET: /Curso_Tema/Create
 
-        public ActionResult Create()
-        {
-            return View();
-        } 
+        ////////////////////////////////////public ActionResult Create()
+        ////////////////////////////////////{
+        ////////////////////////////////////    return View();
+        ////////////////////////////////////} 
 
-        //
-        // POST: /Curso_Tema/Create
+        //////////////////////////////////////
+        ////////////////////////////////////// POST: /Curso_Tema/Create
 
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
+        ////////////////////////////////////[HttpPost]
+        ////////////////////////////////////public ActionResult Create(FormCollection collection)
+        ////////////////////////////////////{
+        ////////////////////////////////////    try
+        ////////////////////////////////////    {
+        ////////////////////////////////////        // TODO: Add insert logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        ////////////////////////////////////        return RedirectToAction("Index");
+        ////////////////////////////////////    }
+        ////////////////////////////////////    catch
+        ////////////////////////////////////    {
+        ////////////////////////////////////        return View();
+        ////////////////////////////////////    }
+        ////////////////////////////////////}
         
         //
         // GET: /Curso_Tema/Edit/5
  
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int IdCT)
         {
-            return View();
+            return View(repoCurso_Tema.obtenerCurso_Tema(IdCT));
         }
 
         //
         // POST: /Curso_Tema/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int IdCT, Curso_Tema datos)
         {
-            try
-            {
-                // TODO: Add update logic here
- 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            datos.IdCT = IdCT;
+            repoCurso_Tema.actualizarCurso_Tema(datos);
+            return View();
         }
 
         //

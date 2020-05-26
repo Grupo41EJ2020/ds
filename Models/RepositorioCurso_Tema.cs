@@ -71,16 +71,14 @@ namespace MVCLaboratorio.Models
             BaseHelper.ejecutarConsulta("sp_Curso_Tema_Eliminar", CommandType.StoredProcedure, parametros);
         }
 
-        //public void actualizarVideo(Video datosVideo)
-        //{
-        //    //realizar el update
-        //    List<SqlParameter> parametros = new List<SqlParameter>();
-        //    parametros.Add(new SqlParameter("@IdVideo", datosVideo.IdVideo));
-        //    parametros.Add(new SqlParameter("@Nombre", datosVideo.Nombre));
-        //    parametros.Add(new SqlParameter("@Url", datosVideo.Url));
-        //    parametros.Add(new SqlParameter("@FechaPublicacion", datosVideo.FechaPublicacion));
+        public void actualizarCurso_Tema(Curso_Tema datosCurso_Tema)
+        {
+            //realizar el update
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@IdCurso", datosCurso_Tema.IdCurso));
+            parametros.Add(new SqlParameter("@IdTema", datosCurso_Tema.IdTema));
 
-        //    BaseHelper.ejecutarConsulta("sp_Video_Actualizar", CommandType.StoredProcedure, parametros);
-        //}
+            BaseHelper.ejecutarConsulta("sp_Curso_Tema_Actualizar", CommandType.StoredProcedure, parametros);
+        }
     }
 }
