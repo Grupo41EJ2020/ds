@@ -66,7 +66,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\CursoController.cs" />
+    <Compile Include="Controllers\Curso1Controller.cs" />
     <Compile Include="Controllers\Curso_TemaController.cs" />
     <Compile Include="Controllers\Curso_Tema_VideoController.cs" />
     <Compile Include="Controllers\EmpleadoController.cs" />
@@ -93,6 +93,11 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Views\Curso1\Create.aspx" />
+    <Content Include="Views\Curso1\Delete.aspx" />
+    <Content Include="Views\Curso1\Details.aspx" />
+    <Content Include="Views\Curso1\Edit.aspx" />
+    <Content Include="Views\Curso1\Index.aspx" />
     <Content Include="Views\Curso_Tema\Create.aspx" />
     <Content Include="Views\Curso_Tema\Delete.aspx" />
     <Content Include="Views\Curso_Tema\Details.aspx" />
