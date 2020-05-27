@@ -4,12 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
-    <title>Editar Un Curso_Tema</title>
+    <title>Crear Nuevo Cruso_Tema</title>
 </head>
 <body>
     <% using (Html.BeginForm()) {%>
         <%: Html.ValidationSummary(true) %>
-        
+
         <fieldset>
             <legend>Datos</legend>
             
@@ -30,7 +30,7 @@
             </div>
             
             <p>
-                <input type="submit" value="Guardar" />
+                <input type="submit" value="Crear" />
             </p>
         </fieldset>
 

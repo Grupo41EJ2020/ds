@@ -34,33 +34,25 @@ namespace MVCLaboratorio.Controllers
         //
         // GET: /Curso_Tema/Create
 
-        ////////////////////////////////////public ActionResult Create()
-        ////////////////////////////////////{
-        ////////////////////////////////////    return View();
-        ////////////////////////////////////} 
+        public ActionResult Create()
+        {
+            return View();
+        }
 
-        //////////////////////////////////////
-        ////////////////////////////////////// POST: /Curso_Tema/Create
+        
+         //POST: /Curso_Tema/Create
 
-        ////////////////////////////////////[HttpPost]
-        ////////////////////////////////////public ActionResult Create(FormCollection collection)
-        ////////////////////////////////////{
-        ////////////////////////////////////    try
-        ////////////////////////////////////    {
-        ////////////////////////////////////        // TODO: Add insert logic here
-
-        ////////////////////////////////////        return RedirectToAction("Index");
-        ////////////////////////////////////    }
-        ////////////////////////////////////    catch
-        ////////////////////////////////////    {
-        ////////////////////////////////////        return View();
-        ////////////////////////////////////    }
-        ////////////////////////////////////}
+        [HttpPost]
+        public ActionResult Create(Curso_Tema datos)
+        {
+            repoCurso_Tema.insertarCurso_Tema(datos);
+            return RedirectToAction("Index");
+        }
         
         //
         // GET: /Curso_Tema/Edit/5
- 
-        public ActionResult Edit(int IdCT)
+
+        public ActionResult Curso_TemaEdit(int IdCT)
         {
             return View(repoCurso_Tema.obtenerCurso_Tema(IdCT));
         }
@@ -69,16 +61,16 @@ namespace MVCLaboratorio.Controllers
         // POST: /Curso_Tema/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(int IdCT, Curso_Tema datos)
+        public ActionResult Curso_TemaEdit(int IdCT, Curso_Tema datos)
         {
             datos.IdCT = IdCT;
             repoCurso_Tema.actualizarCurso_Tema(datos);
-            return View();
+            return RedirectToAction("Index");
         }
 
         //
         // GET: /Curso_Tema/Delete/5
- 
+
         public ActionResult Delete(int IdCT)
         {
             return View(repoCurso_Tema.obtenerCurso_Tema(IdCT));

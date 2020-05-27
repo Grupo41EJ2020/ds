@@ -91,9 +91,10 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Views\Curso_Tema\Create.aspx" />
     <Content Include="Views\Curso_Tema\Delete.aspx" />
     <Content Include="Views\Curso_Tema\Details.aspx" />
-    <Content Include="Views\Curso_Tema\Edit.aspx" />
+    <Content Include="Views\Curso_Tema\Curso_TemaEdit.aspx" />
     <Content Include="Views\Curso_Tema\Index.aspx" />
     <Content Include="Views\Curso_Tema_Video\All.aspx" />
     <Content Include="Views\Curso_Tema_Video\Index.aspx" />

@@ -57,10 +57,14 @@ namespace MVCLaboratorio.Models
             }
         }
 
-        //public void insertarVideo(Video datosVideo)
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public void insertarCurso_Tema(Curso_Tema datosCurso_Tema)
+        {
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@IdCurso", datosCurso_Tema.IdCurso));
+            parametros.Add(new SqlParameter("@IdTema", datosCurso_Tema.IdTema));
+
+            BaseHelper.ejecutarConsulta("sp_Curso_Tema_Crear", CommandType.StoredProcedure, parametros);
+        }
 
         public void eliminarCurso_Tema(int IdCT)
         {
@@ -75,6 +79,7 @@ namespace MVCLaboratorio.Models
         {
             //realizar el update
             List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@IdCT", datosCurso_Tema.IdCT));
             parametros.Add(new SqlParameter("@IdCurso", datosCurso_Tema.IdCurso));
             parametros.Add(new SqlParameter("@IdTema", datosCurso_Tema.IdTema));
 

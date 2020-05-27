@@ -19,9 +19,9 @@
     
         <tr>
             <td>
-                <%: Html.ActionLink("Editar", "Edit", new {  IdCT=item.IdCT }) %> |
-                <%: Html.ActionLink("Detalles", "Details", new {  IdCT=item.IdCT })%> |
-                <%: Html.ActionLink("Eliminar", "Delete", new {  IdCT=item.IdCT  })%>
+                <%: Html.ActionLink("Editar", "Curso_TemaEdit", new { IdCT = item.IdCT })%> |
+                <%: Html.ActionLink("Detalles", "Details", new { IdCT = item.IdCT })%> |
+                <%: Html.ActionLink("Eliminar", "Delete", new { IdCT = item.IdCT })%>
             </td>
             <td>
                 <%: item.IdCT %>
@@ -33,7 +33,7 @@
     </table>
 
     <p>
-        <%: Html.ActionLink("Crear nuevo Curso_Tema", "Create") %>
+        <%: Html.ActionLink("Crear nuevo Curso_Tema", "Create")%>
     </p>
 
 </body>

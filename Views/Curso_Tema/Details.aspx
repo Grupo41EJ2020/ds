@@ -21,8 +21,8 @@
         
     </fieldset>
     <p>
-        <%: Html.ActionLink("Edit", "Editar", new {  IdCT=Model.IdCT }) %> |
-        <%: Html.ActionLink("Regresar a la lista", "Index") %>
+        <%: Html.ActionLink("Editar", "Curso_TemaEdit", new { IdCT = Model.IdCT })%> |
+        <%: Html.ActionLink("Regresar a la lista", "Index")%>
     </p>
 
 </body>

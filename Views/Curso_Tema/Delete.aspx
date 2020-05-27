@@ -24,7 +24,7 @@
     <% using (Html.BeginForm()) { %>
         <p>
 		    <input type="submit" value="Eliminar" /> |
-		    <%: Html.ActionLink("Regresar a la lista", "Index") %>
+		    <%: Html.ActionLink("Regresar a la lista", "Index")%>
         </p>
     <% } %>
 
