@@ -16,6 +16,8 @@
     </h2>
     <a href="/Curso_Tema/Index">Ver Curso Tema</a>
     <br />
+    <a href="/Curso_Tema_Video/Index">Ver Curso Tema Video</a>
+    <br />
     <a href="/Tema/Index">Ver tema</a>
     <br />
     <a href="/Video/Index">Ver Videos</a>

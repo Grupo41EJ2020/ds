@@ -25,7 +25,21 @@ namespace MVCLaboratorio.Controllers
         // GET: /Video/All
         public ActionResult All()
         {
-            return View();
+            DataTable dtVideos = BaseHelper.ejecutarConsulta("sp_Video_ConsultarTodo", CommandType.StoredProcedure);
+            //convert DATATABLE
+            List<Video> lstvideos = new List<Video>();
+            foreach (DataRow item in dtVideos.Rows)
+            {
+                Video datosVideo = new Video();
+                datosVideo.IdVideo = int.Parse(item["IdVideo"].ToString());
+                datosVideo.Nombre = item["Nombre"].ToString();
+                datosVideo.Url = item["Url"].ToString();
+                datosVideo.FechaPublicacion = DateTime.Parse(item["FechaPublicacion"].ToString());
+
+                lstvideos.Add(datosVideo);
+
+            }
+            return View(lstvideos);
         }
 
         //

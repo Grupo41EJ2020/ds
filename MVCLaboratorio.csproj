@@ -95,9 +95,12 @@
     <Content Include="Views\Curso_Tema\Details.aspx" />
     <Content Include="Views\Curso_Tema\Edit.aspx" />
     <Content Include="Views\Curso_Tema\Index.aspx" />
+    <Content Include="Views\Curso_Tema_Video\All.aspx" />
+    <Content Include="Views\Curso_Tema_Video\Index.aspx" />
     <Content Include="Views\Empleado\Index.aspx" />
     <Content Include="Views\Home\Index.aspx" />
     <Content Include="Views\Tema\Index.aspx" />
+    <Content Include="Views\Video\All.aspx" />
     <Content Include="Views\Video\Create.aspx" />
     <Content Include="Views\Video\Index.aspx" />
     <Content Include="Web.config">
