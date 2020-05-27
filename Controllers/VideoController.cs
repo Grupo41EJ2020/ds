@@ -16,6 +16,8 @@ namespace MVCLaboratorio.Controllers
         //
         // GET: /Video/
 
+        RepositorioVideo repoVideo = new RepositorioVideo();
+
         public ActionResult Index()
         {
             return View();
