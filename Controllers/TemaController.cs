@@ -14,31 +14,19 @@ namespace MVCLaboratorio.Controllers
     {
         //
         // GET: /Tema/
+        RepositorioTema repoTema = new RepositorioTema();
 
         public ActionResult Index()
         {
-            DataTable dtTema = BaseHelper.ejecutarConsulta("sp_Tema_ConsultarTodo", CommandType.StoredProcedure);
-
-            List<Tema> lstTema = new List<Tema>();
-
-            foreach (DataRow item in dtTema.Rows)
-            {
-                Tema datosTema = new Tema();
-                datosTema.idTema = int.Parse(item["idTema"].ToString());
-                datosTema.Nombre = item["Nombre"].ToString();
-
-                lstTema.Add(datosTema);
-
-            }
-                return View();
+           return View(repoTema.ObtenerTema());
         }
 
         //
         // GET: /Tema/Details/5
 
-        public ActionResult Details(int id)
+        public ActionResult Details(int idTema)
         {
-            return View();
+            return View();//(repoTema.ObtenerTema(idTema));
         }
 
         //
