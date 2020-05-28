@@ -13,13 +13,7 @@
         <fieldset>
             <legend>DATOS</legend>
             
-            <div class="editor-label">
-                <%: Html.LabelFor(model => model.idEmpleado) %>
-            </div>
-            <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.idEmpleado) %>
-                <%: Html.ValidationMessageFor(model => model.idEmpleado) %>
-            </div>
+            
             
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.nombre) %>

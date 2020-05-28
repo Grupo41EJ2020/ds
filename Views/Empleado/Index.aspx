@@ -7,6 +7,8 @@
     <title>Empleados (Index)</title>
 </head>
 <body>
+<h1>TABLA DE EMPLEADOS</h1>
+<br />
     <table>
         <tr>
             <th></th>

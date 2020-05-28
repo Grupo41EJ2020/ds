@@ -60,10 +60,11 @@ namespace MVCLaboratorio.Models
         public void insertarEmpleado(Empleado datosEmpleado)
         {
             List<SqlParameter> parametros = new List<SqlParameter>();
-            parametros.Add(new SqlParameter("@IdEmpleado", datosEmpleado.idEmpleado));
+            //parametros.Add(new SqlParameter("@IdEmpleado", datosEmpleado.idEmpleado));
             parametros.Add(new SqlParameter("@Nombre", datosEmpleado.idEmpleado));
+            parametros.Add(new SqlParameter("@Direccion", datosEmpleado.direccion));
 
-            BaseHelper.ejecutarConsulta("sp_Empleadoo_Crear", CommandType.StoredProcedure, parametros);
+            BaseHelper.ejecutarConsulta("sp_Empleadoo_Insertar", CommandType.StoredProcedure, parametros);
         
         }
 
