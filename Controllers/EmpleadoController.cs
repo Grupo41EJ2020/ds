@@ -60,7 +60,7 @@ namespace MVCLaboratorio.Controllers
  
         public ActionResult Edit(int id)
         {
-            return View();
+            return View(repoEmpleado.obtenerEmpleado(id));
         }
 
         //
@@ -86,7 +86,7 @@ namespace MVCLaboratorio.Controllers
  
         public ActionResult Delete(int id)
         {
-            return View();
+            return View(repoEmpleado.obtenerEmpleado(id));
         }
 
         //
@@ -95,16 +95,9 @@ namespace MVCLaboratorio.Controllers
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
-            try
-            {
-                // TODO: Add delete logic here
- 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
+            repoEmpleado.eliminarEmpleado(id);
                 return View();
-            }
+            
         }
     }
 }

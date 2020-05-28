@@ -64,7 +64,12 @@ namespace MVCLaboratorio.Models
 
         public void eliminarEmpleado(int idEmpleado)
         {
-            throw new NotImplementedException();
+            //obtener info del video
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@IdEmpleado", idEmpleado));
+
+            BaseHelper.ejecutarConsulta("sp_Empleado_Eliminar", CommandType.StoredProcedure, parametros);
+            
         }
 
         public void actualizarEmpleado(Empleado datosEmpleado)
