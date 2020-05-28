@@ -13,12 +13,7 @@
             <th>
                 idEmpleado
             </th>
-            <th>
-                nombre
-            </th>
-            <th>
-                direccion
-            </th>
+            
         </tr>
 
     <% foreach (var item in Model) { %>
@@ -32,12 +27,7 @@
             <td>
                 <%: item.idEmpleado %>
             </td>
-            <td>
-                <%: item.nombre %>
-            </td>
-            <td>
-                <%: item.direccion %>
-            </td>
+            
         </tr>
     
     <% } %>
