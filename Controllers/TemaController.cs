@@ -42,18 +42,10 @@ namespace MVCLaboratorio.Controllers
         // POST: /Tema/Create
 
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Tema datosTema)
         {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            repoTema.insertarTema(datosTema);
+            return RedirectToAction("Index");
         }
         
         //

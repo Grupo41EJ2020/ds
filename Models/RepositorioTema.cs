@@ -54,7 +54,11 @@ namespace MVCLaboratorio.Models
 
         public void insertarTema(Tema datosTema)
         {
-            throw new NotImplementedException();
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@idTema", datosTema.idTema));
+            parametros.Add(new SqlParameter("@Nombre", datosTema.Nombre));
+
+            BaseHelper.ejecutarConsulta("sp_Tema_Insertar", CommandType.StoredProcedure, parametros);
         }
 
         public void eliminarTema(int idTema)
