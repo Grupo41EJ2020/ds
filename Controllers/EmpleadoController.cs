@@ -24,10 +24,10 @@ namespace MVCLaboratorio.Controllers
         //
         // GET: /Empleado/Details/5
 
-        public ActionResult Details(int id)
+        public ActionResult Details(int idEmpleado)
         {
             //muestra la info del registro seleccionado
-            return View(repoEmpleado.obtenerEmpleado(id));
+            return View(repoEmpleado.obtenerEmpleado(idEmpleado));
         }
 
         //
@@ -42,39 +42,39 @@ namespace MVCLaboratorio.Controllers
         // POST: /Empleado/Create
 
         [HttpPost]
-        public ActionResult Create(Empleado datos)
+        public ActionResult Create(Empleado datosEmpleado)
         {
-            repoEmpleado.insertarEmpleado(datos);
+            repoEmpleado.insertarEmpleado(datosEmpleado);
             return RedirectToAction("Index");
         }
         
         //
         // GET: /Empleado/Edit/5
  
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int idEmpleado)
         {
             //muestra el registro antes de editarlo
-            return View(repoEmpleado.obtenerEmpleado(id));
+            return View(repoEmpleado.obtenerEmpleado(idEmpleado));
         }
 
         //
         // POST: /Empleado/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(int id, Empleado datos)
+        public ActionResult Edit(int idEmpleado, Empleado datosEmpleado)
         {
-            datos.idEmpleado = id;
-            repoEmpleado.actualizarEmpleado(datos);
+            datosEmpleado.idEmpleado = idEmpleado;
+            repoEmpleado.actualizarEmpleado(datosEmpleado);
             return RedirectToAction("Index");
         }
 
         //
         // GET: /Empleado/Delete/5
  
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int idEmpleado)
         {
             //muestra el registro antes de eliminarlo
-            return View(repoEmpleado.obtenerEmpleado(id));
+            return View(repoEmpleado.obtenerEmpleado(idEmpleado));
             
         }
 
@@ -82,9 +82,9 @@ namespace MVCLaboratorio.Controllers
         // POST: /Empleado/Delete/5
 
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int idEmpleado, FormCollection collection)
         {
-            repoEmpleado.eliminarEmpleado(id);
+            repoEmpleado.eliminarEmpleado(idEmpleado);
             return RedirectToAction("Index");
             
         }

@@ -23,7 +23,7 @@
     </fieldset>
     <% using (Html.BeginForm()) { %>
         <p>
-		    <input type="submit" value="Delete" /> |
+		    <input type="submit" value="Eliminar" /> |
 		    <%: Html.ActionLink("regresar a la lista", "Index") %>
         </p>
     <% } %>
