@@ -13,31 +13,11 @@ namespace MVCLaboratorio.Controllers
 {
     public class EmpleadoController : Controller
     {
-        //
-        // GET: /Empleado/
+        RepositorioEmpleado repoEmpleado = new RepositorioEmpleado();
 
         public ActionResult Index()
         {
-            //obtener todos los videos
-            DataTable dtEmpleado = BaseHelper.ejecutarConsulta("sp_empleado_consultar", CommandType.StoredProcedure);
-
-            List<Empleado> lstEmpleado = new List<Empleado>();
-
-            //convertir el DataTable en List<Video> 
-
-            foreach (DataRow item in dtEmpleado.Rows)
-            {
-                Empleado datosEmpleado = new Empleado();
-                datosEmpleado.idEmpleado = int.Parse(item["idVideo"].ToString());
-                datosEmpleado.nombre = item["nombre"].ToString();
-                datosEmpleado.direccion = item["direccion"].ToString();
-               
-                lstEmpleado.Add(datosEmpleado);
-
-            }
-
-            return View(lstEmpleado);
-
+            return View(repoEmpleado.obtenerEmpleado());
         }
 
         //
