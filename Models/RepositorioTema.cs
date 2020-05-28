@@ -9,15 +9,17 @@ using MVCLaboratorio.Models;
 
 namespace MVCLaboratorio.Models
 {
-    public class RepositorioTema:ITema
+    public class RepositorioTema : ITema
     {
-        public List<Tema> ObtenerTema()
+        public List<Tema> obtenerTema()
         {
-            //obtener videos
+            //obtener todos los videos
             DataTable dtTema = BaseHelper.ejecutarConsulta("sp_Tema_ConsultarTodo", CommandType.StoredProcedure);
 
             List<Tema> lstTema = new List<Tema>();
+
             //convertir el DataTable en List<Video> 
+
             foreach (DataRow item in dtTema.Rows)
             {
                 Tema datosTema = new Tema();
@@ -25,13 +27,14 @@ namespace MVCLaboratorio.Models
                 datosTema.Nombre = item["Nombre"].ToString();
 
                 lstTema.Add(datosTema);
+
             }
             return lstTema;
         }
 
-            public Tema obtenerTema(int idTema)
+        public Tema obtenerTema(int idTema)
         {
-            //consultar los datos del tema
+            //consultar los datos del Tema
             List<SqlParameter> parametros = new List<SqlParameter>();
             parametros.Add(new SqlParameter("@idTema", idTema));
 
@@ -63,17 +66,20 @@ namespace MVCLaboratorio.Models
 
         public void eliminarTema(int idTema)
         {
-            throw new NotImplementedException();
+            //obtener informacion del video
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@idTema", idTema));
+
+            BaseHelper.ejecutarConsulta("sp_Tema_Eliminar", CommandType.StoredProcedure, parametros);
         }
 
         public void actualizarTema(Tema datosTema)
         {
-            throw new NotImplementedException();
-        }
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@idTema", datosTema.idTema));
+            parametros.Add(new SqlParameter("@Nombre", datosTema.Nombre));
 
-        public List<Tema> obtenerTema()
-        {
-            throw new NotImplementedException();
+            BaseHelper.ejecutarConsulta("sp_Tema_Actualizar", CommandType.StoredProcedure, parametros);
         }
     }
 }

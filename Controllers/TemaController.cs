@@ -18,7 +18,7 @@ namespace MVCLaboratorio.Controllers
         public ActionResult Index()
         {
            //muestra todo
-           return View(repoTema.ObtenerTema());
+           return View(repoTema.obtenerTema());
         }
 
         //
@@ -50,54 +50,43 @@ namespace MVCLaboratorio.Controllers
         
         //
         // GET: /Tema/Edit/5
- 
-        public ActionResult Edit(int id)
+
+        public ActionResult Edit(int idTema)
         {
-            return View();
+            //muestra el registro antes de editarlo
+            return View(repoTema.obtenerTema(idTema));
         }
 
         //
         // POST: /Tema/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int idTema, Tema datosTema)
         {
-            try
-            {
-                // TODO: Add update logic here
- 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            datosTema.idTema = idTema;
+            repoTema.actualizarTema(datosTema);
+            return RedirectToAction("Index");
         }
 
         //
         // GET: /Tema/Delete/5
- 
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
 
+        public ActionResult Delete(int idTema)
+        {
+            //muestra el registro antes de eliminarlo
+            return View(repoTema.obtenerTema(idTema));
+
+        }
+      
         //
         // POST: /Tema/Delete/5
 
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int idTema, FormCollection collection)
         {
-            try
-            {
-                // TODO: Add delete logic here
- 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            repoTema.eliminarTema(idTema);
+            return RedirectToAction("Index");
+            
         }
     }
 }
