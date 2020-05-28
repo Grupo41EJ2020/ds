@@ -40,7 +40,7 @@ namespace MVCLaboratorio.Models
             List<SqlParameter> parametros = new List<SqlParameter>();
             parametros.Add(new SqlParameter("@IdEmpleado", idEmpleado));
 
-            DataTable dtEmpleado = BaseHelper.ejecutarConsulta("sp_Empleado_ConsultarPorID", CommandType.StoredProcedure, parametros);
+            DataTable dtEmpleado = BaseHelper.ejecutarConsulta("sp_Empleadoo_ConsultarPorID", CommandType.StoredProcedure, parametros);
 
             Empleado miEmpleado = new Empleado();
 
@@ -59,7 +59,12 @@ namespace MVCLaboratorio.Models
 
         public void insertarEmpleado(Empleado datosEmpleado)
         {
-            throw new NotImplementedException();
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@IdEmpleado", datosEmpleado.idEmpleado));
+            parametros.Add(new SqlParameter("@Nombre", datosEmpleado.idEmpleado));
+
+            BaseHelper.ejecutarConsulta("sp_Empleadoo_Crear", CommandType.StoredProcedure, parametros);
+        
         }
 
         public void eliminarEmpleado(int idEmpleado)
@@ -68,7 +73,7 @@ namespace MVCLaboratorio.Models
             List<SqlParameter> parametros = new List<SqlParameter>();
             parametros.Add(new SqlParameter("@IdEmpleado", idEmpleado));
 
-            BaseHelper.ejecutarConsulta("sp_Empleado_Eliminar", CommandType.StoredProcedure, parametros);
+            BaseHelper.ejecutarConsulta("sp_Empleadoo_Eliminar", CommandType.StoredProcedure, parametros);
             
         }
 
@@ -81,7 +86,7 @@ namespace MVCLaboratorio.Models
             parametros.Add(new SqlParameter("@Direccion", datosEmpleado.direccion));
            
 
-            BaseHelper.ejecutarConsulta("sp_Empleado_Actualizar", CommandType.StoredProcedure, parametros);
+            BaseHelper.ejecutarConsulta("sp_Empleadoo_Actualizar", CommandType.StoredProcedure, parametros);
             
         }
     }

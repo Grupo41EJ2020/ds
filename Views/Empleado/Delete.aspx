@@ -4,11 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
-    <title>Detalles de Empleado</title>
+    <title>Eliminar Empleado</title>
 </head>
 <body>
+    <h3>¿estas seguro de querer eliminar este registro?</h3>
     <fieldset>
-        <legend>DATOS</legend>
+        <legend>Fields</legend>
         
         <div class="display-label">idEmpleado</div>
         <div class="display-field"><%: Model.idEmpleado %></div>
@@ -20,10 +21,12 @@
         <div class="display-field"><%: Model.direccion %></div>
         
     </fieldset>
-    <p>
-        <%: Html.ActionLink("Editar", "Editar", new { idEmpleado=Model.idEmpleado }) %> |
-        <%: Html.ActionLink("Regresar a la lista", "Index") %>
-    </p>
+    <% using (Html.BeginForm()) { %>
+        <p>
+		    <input type="submit" value="Delete" /> |
+		    <%: Html.ActionLink("regresar a la lista", "Index") %>
+        </p>
+    <% } %>
 
 </body>
 </html>

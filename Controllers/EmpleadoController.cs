@@ -42,18 +42,10 @@ namespace MVCLaboratorio.Controllers
         // POST: /Empleado/Create
 
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Empleado datos)
         {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            repoEmpleado.insertarEmpleado(datos);
+            return RedirectToAction("Index");
         }
         
         //
@@ -73,7 +65,7 @@ namespace MVCLaboratorio.Controllers
         {
             datos.idEmpleado = id;
             repoEmpleado.actualizarEmpleado(datos);
-                return View();
+            return RedirectToAction("Index");
         }
 
         //
@@ -93,7 +85,7 @@ namespace MVCLaboratorio.Controllers
         public ActionResult Delete(int id, FormCollection collection)
         {
             repoEmpleado.eliminarEmpleado(id);
-                return View();
+            return RedirectToAction("Index");
             
         }
     }

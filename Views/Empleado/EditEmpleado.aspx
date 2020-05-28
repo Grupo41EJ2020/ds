@@ -4,14 +4,14 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
-    <title>EditEmpleado</title>
+    <title>Editar Empleado</title>
 </head>
 <body>
     <% using (Html.BeginForm()) {%>
         <%: Html.ValidationSummary(true) %>
         
         <fieldset>
-            <legend>Fields</legend>
+            <legend>DATOS</legend>
             
             <div class="editor-label">
                 <%: Html.LabelFor(model => model.idEmpleado) %>
@@ -38,14 +38,14 @@
             </div>
             
             <p>
-                <input type="submit" value="Save" />
+                <input type="submit" value="Guardar" />
             </p>
         </fieldset>
 
     <% } %>
 
     <div>
-        <%: Html.ActionLink("Back to List", "Index") %>
+        <%: Html.ActionLink("Regresar a la lista", "Index") %>
     </div>
 
 </body>
