@@ -17,6 +17,7 @@ namespace MVCLaboratorio.Controllers
 
         public ActionResult Index()
         {
+            //muestra todo
             return View(repoEmpleado.obtenerEmpleado());
         }
 
@@ -25,7 +26,7 @@ namespace MVCLaboratorio.Controllers
 
         public ActionResult Details(int id)
         {
-            
+            //muestra la info del registro seleccionado
             return View(repoEmpleado.obtenerEmpleado(id));
         }
 
@@ -60,6 +61,7 @@ namespace MVCLaboratorio.Controllers
  
         public ActionResult Edit(int id)
         {
+            //muestra el registro antes de editarlo
             return View(repoEmpleado.obtenerEmpleado(id));
         }
 
@@ -67,18 +69,11 @@ namespace MVCLaboratorio.Controllers
         // POST: /Empleado/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, Empleado datos)
         {
-            try
-            {
-                // TODO: Add update logic here
- 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
+            datos.idEmpleado = id;
+            repoEmpleado.actualizarEmpleado(datos);
                 return View();
-            }
         }
 
         //
@@ -86,7 +81,9 @@ namespace MVCLaboratorio.Controllers
  
         public ActionResult Delete(int id)
         {
+            //muestra el registro antes de eliminarlo
             return View(repoEmpleado.obtenerEmpleado(id));
+            
         }
 
         //

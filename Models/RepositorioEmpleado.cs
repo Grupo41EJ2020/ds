@@ -74,7 +74,15 @@ namespace MVCLaboratorio.Models
 
         public void actualizarEmpleado(Empleado datosEmpleado)
         {
-            throw new NotImplementedException();
+            //realizar el update
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@IdEmpleado", datosEmpleado.idEmpleado));
+            parametros.Add(new SqlParameter("@Nombre", datosEmpleado.nombre));
+            parametros.Add(new SqlParameter("@Direccion", datosEmpleado.direccion));
+           
+
+            BaseHelper.ejecutarConsulta("sp_Empleado_Actualizar", CommandType.StoredProcedure, parametros);
+            
         }
     }
 }
