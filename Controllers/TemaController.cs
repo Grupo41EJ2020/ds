@@ -12,12 +12,11 @@ namespace MVCLaboratorio.Controllers
 {
     public class TemaController : Controller
     {
-        //
-        // GET: /Tema/
         RepositorioTema repoTema = new RepositorioTema();
 
         public ActionResult Index()
         {
+           //muestra todo
            return View(repoTema.ObtenerTema());
         }
 
@@ -26,7 +25,8 @@ namespace MVCLaboratorio.Controllers
 
         public ActionResult Details(int idTema)
         {
-            return View();//(repoTema.ObtenerTema(idTema));
+            //muestra la info del registro seleccionado
+            return View();
         }
 
         //

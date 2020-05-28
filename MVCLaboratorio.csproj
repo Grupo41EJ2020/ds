@@ -82,6 +82,7 @@
     <Compile Include="Models\Curso_Tema_Video.cs" />
     <Compile Include="Models\Empleado.cs" />
     <Compile Include="Models\IEmpleado.cs" />
+    <Compile Include="Models\ITema.cs" />
     <Compile Include="Models\RepositorioCurso.cs" />
     <Compile Include="Models\RepositorioCurso_Tema.cs" />
     <Compile Include="Models\RepositorioCurso_Tema_Video.cs" />
