@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+
 using System.Data;
 using System.Data.SqlClient;
 using MVCLaboratorio.Utilerias;
@@ -26,7 +27,7 @@ namespace MVCLaboratorio.Controllers
         public ActionResult Details(int idTema)
         {
             //muestra la info del registro seleccionado
-            return View();
+            return View(repoTema.obtenerTema(idTema));
         }
 
         //
