@@ -13,24 +13,18 @@
             <th>
                 idTema
             </th>
-            <th>
-                Nombre
-            </th>
         </tr>
 
     <% foreach (var item in Model) { %>
     
         <tr>
             <td>
-                <%: Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) %> |
-                <%: Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ })%> |
-                <%: Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })%>
+                <%: Html.ActionLink("Editar", "Edit", new { idTema = item.idTema}) %> |
+                <%: Html.ActionLink("Detalles", "Details", new { idTema = item.idTema })%> |
+                <%: Html.ActionLink("Eliminar", "Delete", new { idTema = item.idTema})%>
             </td>
             <td>
                 <%: item.idTema %>
-            </td>
-            <td>
-                <%: item.Nombre %>
             </td>
         </tr>
     
@@ -39,7 +33,7 @@
     </table>
 
     <p>
-        <%: Html.ActionLink("Create New", "Create") %>
+        <%: Html.ActionLink("Crear uno nuevo", "Create") %>
     </p>
 
 </body>
