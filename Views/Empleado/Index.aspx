@@ -20,7 +20,7 @@
     
         <tr>
             <td>
-                <%: Html.ActionLink("Editar", "EditEmpleado", new { idEmpleado = item.idEmpleado }) %> |
+                <%: Html.ActionLink("Editar", "Edit", new { idEmpleado = item.idEmpleado }) %> |
                 <%: Html.ActionLink("Detalles", "Details", new { idEmpleado = item.idEmpleado })%> |
                 <%: Html.ActionLink("Borrar", "Delete", new { idEmpleado = item.idEmpleado })%>
             </td>
