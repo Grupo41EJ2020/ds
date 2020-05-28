@@ -26,7 +26,7 @@ namespace MVCLaboratorio.Controllers
         public ActionResult Details(int id)
         {
             
-            return View();
+            return View(repoEmpleado.obtenerEmpleado(id));
         }
 
         //

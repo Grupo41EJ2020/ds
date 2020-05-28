@@ -36,7 +36,25 @@ namespace MVCLaboratorio.Models
 
         public Empleado obtenerEmpleado(int idEmpleado)
         {
-            throw new NotImplementedException();
+            //consultar los datos del empleado
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@IdEmpleado", idEmpleado));
+
+            DataTable dtEmpleado = BaseHelper.ejecutarConsulta("sp_Empleado_ConsultarPorID", CommandType.StoredProcedure, parametros);
+
+            Empleado miEmpleado = new Empleado();
+
+            if (dtEmpleado.Rows.Count > 0)
+            {
+                miEmpleado.idEmpleado = int.Parse(dtEmpleado.Rows[0]["IdEmpleado"].ToString());
+                miEmpleado.nombre = dtEmpleado.Rows[0]["Nombre"].ToString();
+                miEmpleado.direccion= dtEmpleado.Rows[0]["Direccion"].ToString();
+                return miEmpleado;
+            }
+            else
+            {  //no encontrado 
+                return null;
+            }
         }
 
         public void insertarEmpleado(Empleado datosEmpleado)
