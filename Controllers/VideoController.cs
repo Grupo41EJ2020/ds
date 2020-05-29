@@ -20,36 +20,17 @@ namespace MVCLaboratorio.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            return View(repoVideo.ObtenerVideos());
         }
 
-        //
-        // GET: /Video/All
-        public ActionResult All()
-        {
-            DataTable dtVideos = BaseHelper.ejecutarConsulta("sp_Video_ConsultarTodo", CommandType.StoredProcedure);
-            //convert DATATABLE
-            List<Video> lstvideos = new List<Video>();
-            foreach (DataRow item in dtVideos.Rows)
-            {
-                Video datosVideo = new Video();
-                datosVideo.IdVideo = int.Parse(item["IdVideo"].ToString());
-                datosVideo.Nombre = item["Nombre"].ToString();
-                datosVideo.Url = item["Url"].ToString();
-                datosVideo.FechaPublicacion = DateTime.Parse(item["FechaPublicacion"].ToString());
-
-                lstvideos.Add(datosVideo);
-
-            }
-            return View(lstvideos);
-        }
+      
 
         //
         // GET: /Video/Details/5
 
         public ActionResult Details(int id)
         {
-            return View();
+            return View(repoVideo.ObtenerVideo(id));
         }
 
         //
@@ -64,18 +45,14 @@ namespace MVCLaboratorio.Controllers
         // POST: /Video/Create
 
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Video datosVideo)
         {
-            try
-            {
+            
                 // TODO: Add insert logic here
-
+                repoVideo.AgregarVideo(datosVideo);
                 return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+        
+            
         }
         
         //
@@ -83,25 +60,21 @@ namespace MVCLaboratorio.Controllers
  
         public ActionResult Edit(int id)
         {
-            return View();
+            return View(repoVideo.ObtenerVideo(id));
         }
 
         //
         // POST: /Video/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, Video datosVideo)
         {
-            try
-            {
-                // TODO: Add update logic here
- 
+
+            datosVideo.IdVideo = id;
+            repoVideo.ModificarVideo(datosVideo);
+
                 return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            
         }
 
         //
@@ -109,25 +82,18 @@ namespace MVCLaboratorio.Controllers
  
         public ActionResult Delete(int id)
         {
-            return View();
+            return View(repoVideo.ObtenerVideo(id));
         }
 
         //
         // POST: /Video/Delete/5
 
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id, Video datosVideo)
         {
-            try
-            {
-                // TODO: Add delete logic here
- 
+            repoVideo.EliminarVideo(id);
                 return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            
         }
     }
 }

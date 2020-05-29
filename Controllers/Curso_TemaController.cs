@@ -80,7 +80,7 @@ namespace MVCLaboratorio.Controllers
         // POST: /Curso_Tema/Delete/5
 
         [HttpPost]
-        public ActionResult Delete(int IdCT, FormCollection collection)
+        public ActionResult Delete(int IdCT, Curso_Tema datos)
         {
             repoCurso_Tema.eliminarCurso_Tema(IdCT);
             return RedirectToAction("Index");

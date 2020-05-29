@@ -107,7 +107,10 @@
     <Content Include="Views\Curso_Tema\Details.aspx" />
     <Content Include="Views\Curso_Tema\Curso_TemaEdit.aspx" />
     <Content Include="Views\Curso_Tema\Index.aspx" />
-    <Content Include="Views\Curso_Tema_Video\All.aspx" />
+    <Content Include="Views\Curso_Tema_Video\Create.aspx" />
+    <Content Include="Views\Curso_Tema_Video\Delete.aspx" />
+    <Content Include="Views\Curso_Tema_Video\Details.aspx" />
+    <Content Include="Views\Curso_Tema_Video\Edit.aspx" />
     <Content Include="Views\Curso_Tema_Video\Index.aspx" />
     <Content Include="Views\Empleado\Create.aspx" />
     <Content Include="Views\Empleado\Delete.aspx" />
@@ -120,8 +123,10 @@
     <Content Include="Views\Tema\Details.aspx" />
     <Content Include="Views\Tema\Edit.aspx" />
     <Content Include="Views\Tema\Index.aspx" />
-    <Content Include="Views\Video\All.aspx" />
     <Content Include="Views\Video\Create.aspx" />
+    <Content Include="Views\Video\Delete.aspx" />
+    <Content Include="Views\Video\Details.aspx" />
+    <Content Include="Views\Video\Edit.aspx" />
     <Content Include="Views\Video\Index.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

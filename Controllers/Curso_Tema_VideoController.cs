@@ -16,37 +16,21 @@ namespace MVCLaboratorio.Controllers
         //
         // GET: /Curso_Tema_Video/
 
+        RepositorioCurso_Tema_Video repoCurso_Tema_Video = new RepositorioCurso_Tema_Video();
+
         public ActionResult Index()
         {
-            return View();
+            return View(repoCurso_Tema_Video.ObtenerCurso_Tema_Videos());
         }
 
-        //
-        //GET: /Curso_Tema_Video/All
-        public ActionResult All()
-        {
-            DataTable dtCTVideos = BaseHelper.ejecutarConsulta("sp_Curso_Tema_Video_ConsultarTodo", CommandType.StoredProcedure);
-            //convert DATATABLE
-            List<Curso_Tema_Video> lstCTVideos = new List<Curso_Tema_Video>();
-            foreach (DataRow item in dtCTVideos.Rows)
-	        {
-                Curso_Tema_Video datosCTVideos = new Curso_Tema_Video();
-                datosCTVideos.IdCTV = int.Parse(item["IdCTV"].ToString());
-                datosCTVideos.IdCT = int.Parse(item["IdCT"].ToString());
-                datosCTVideos.IdVideo = int.Parse(item["IdVideo"].ToString());
-                
-                lstCTVideos.Add(datosCTVideos);
-		 
-	        }
-            return View(lstCTVideos);
-        }
+        
 
         //
         // GET: /Curso_Tema_Video/Details/5
 
         public ActionResult Details(int id)
         {
-            return View();
+            return View(repoCurso_Tema_Video.ObtenerCurso_Tema_Video(id));
         }
 
         //
@@ -61,18 +45,13 @@ namespace MVCLaboratorio.Controllers
         // POST: /Curso_Tema_Video/Create
 
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Curso_Tema_Video datos_Curso_Tema_Video)
         {
-            try
-            {
-                // TODO: Add insert logic here
+
+            repoCurso_Tema_Video.AgregarCursoTemaVideo(datos_Curso_Tema_Video);
 
                 return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            
         }
         
         //
@@ -80,25 +59,21 @@ namespace MVCLaboratorio.Controllers
  
         public ActionResult Edit(int id)
         {
-            return View();
+            return View(repoCurso_Tema_Video.ObtenerCurso_Tema_Video(id));
         }
 
         //
         // POST: /Curso_Tema_Video/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, Curso_Tema_Video datosCurso_Tema_Video)
         {
-            try
-            {
-                // TODO: Add update logic here
- 
+                datosCurso_Tema_Video.IdCTV=id;
+                repoCurso_Tema_Video.ActualizarCursoTemaVideo(datosCurso_Tema_Video);
                 return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            
+                
+            
         }
 
         //
@@ -106,25 +81,19 @@ namespace MVCLaboratorio.Controllers
  
         public ActionResult Delete(int id)
         {
-            return View();
+            return View(repoCurso_Tema_Video.ObtenerCurso_Tema_Video(id));
         }
 
         //
         // POST: /Curso_Tema_Video/Delete/5
 
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id, Curso_Tema_Video datosCurso_Tema_Video)
         {
-            try
-            {
-                // TODO: Add delete logic here
- 
+
+                repoCurso_Tema_Video.EliminarCursoTemaVideo(id);
                 return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            
         }
     }
 }
