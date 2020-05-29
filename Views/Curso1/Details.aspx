@@ -4,11 +4,11 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
-    <title>Detalles del curso</title>
+    <title>Detalles</title>
 </head>
 <body>
     <fieldset>
-        <legend>Datos del Curso</legend>
+        <legend>Datos</legend>
         
         <div class="display-label">IdCurso</div>
         <div class="display-field"><%: Model.IdCurso %></div>
@@ -21,7 +21,7 @@
         
     </fieldset>
     <p>
-        <%: Html.ActionLink("Editar", "CursoEdit", new { IdCurso = Model.IdCurso })%> |
+        <%: Html.ActionLink("Editar", "Edit", new { id= Model.IdCurso })%> |
         <%: Html.ActionLink("Regresar a la lista", "Index")%>
     </p>
 </body>

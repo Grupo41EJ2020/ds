@@ -18,14 +18,14 @@ namespace MVCLaboratorio.Controllers
 
         public ActionResult Index()
         {
-            return View(repoCurso.ObtenerCurso());
+            return View(repoCurso.ObtenerCursos());
         }
         //
         // GET: /Curso/Details/5
 
-        public ActionResult Details(int id)
+        public ActionResult Details(int IdCurso)
         {
-            return View(repoCurso.ObtenerCurso(id));
+            return View(repoCurso.ObtenerCurso(IdCurso));
         }
 
         //
@@ -43,16 +43,16 @@ namespace MVCLaboratorio.Controllers
         public ActionResult Create(Curso datos)
         {
             repoCurso.InsertarCurso(datos);
-            return RedirectToAction("Index", "Curso");
+            return RedirectToAction("Index");
            
         }
 
         //
         // GET: /Curso/Edit/5
 
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int IdCurso)
         {
-            return View(repoCurso.ObtenerCurso(id));
+            return View(repoCurso.ObtenerCurso(IdCurso));
         }
 
         //
@@ -63,16 +63,16 @@ namespace MVCLaboratorio.Controllers
         {
             datos.IdCurso = IdCurso;
             repoCurso.ActualizarCurso(datos);
-            return RedirectToAction("Index", "Curso");
+            return RedirectToAction("Index");
           
         }
 
         //
         // GET: /Curso/Delete/5
 
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int IdCurso)
         {
-            return View(repoCurso.ObtenerCurso(id));
+            return View(repoCurso.ObtenerCurso(IdCurso));
         }
 
         //
@@ -82,7 +82,7 @@ namespace MVCLaboratorio.Controllers
         public ActionResult Delete(int IdCurso, FormCollection collection)
         {
             repoCurso.EliminarCurso(IdCurso);
-            return RedirectToAction("Index", "Curso");
+            return RedirectToAction("Index");
         }
     }
 }
