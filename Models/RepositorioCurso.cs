@@ -9,10 +9,10 @@ using MVCLaboratorio.Utilerias;
 
 namespace MVCLaboratorio.Models
 {
-    public class RepositorioCurso : CursoII 
+    public class RepositorioCurso : Curso
 
     {
-        public List<Curso> ObtenerCurso()
+        public List<Curso> ObtenerCursos()
         {
             DataTable dtCurso = BaseHelper.ejecutarConsulta("sp_Curso_ConsultarTodo", CommandType.StoredProcedure);
             List<Curso> IstCurso= new List<Curso>();

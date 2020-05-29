@@ -18,14 +18,14 @@ namespace MVCLaboratorio.Controllers
 
         public ActionResult Index()
         {
-            return View(repoCurso.ObtenerCurso());
+            return View(repoCurso.ObtenerCursos());
         }
         //
         // GET: /Curso/Details/5
 
-        public ActionResult Details(int id)
+        public ActionResult Details(int IdCurso)
         {
-            return View(repoCurso.ObtenerCurso(id));
+            return View(repoCurso.ObtenerCurso(IdCurso));
         }
 
         //
