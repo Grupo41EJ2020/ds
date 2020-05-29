@@ -9,7 +9,12 @@ using MVCLaboratorio.Utilerias;
 
 namespace MVCLaboratorio.Models
 {
+<<<<<<< HEAD
     public class RepositorioCurso
+=======
+    public class RepositorioCurso : Curso
+
+>>>>>>> 1edec60b405b132db65dba54f37fc0bc7e28f612
     {
         public List<Curso> ObtenerCursos()
         {
