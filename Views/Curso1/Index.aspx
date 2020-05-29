@@ -18,9 +18,9 @@
     
         <tr>
             <td>
-                <%: Html.ActionLink("Editar", "CursoEdit", new { IdCT = item.IdCurso })%> |
-                <%: Html.ActionLink("Detalles", "Details", new { IdCT = item.IdCurso })%> |
-                <%: Html.ActionLink("Eliminar", "Delete", new { IdCT = item.IdCurso })%>
+                <%: Html.ActionLink("Editar", "CursoEdit", new { IdCurso = item.IdCurso })%> |
+                <%: Html.ActionLink("Detalles", "Details", new { IdCurso = item.IdCurso })%> |
+                <%: Html.ActionLink("Eliminar", "Delete", new { IdCurso = item.IdCurso })%>
             </td>
             <td>
                 <%: item.IdCurso %>
